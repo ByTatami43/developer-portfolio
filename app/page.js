@@ -13,29 +13,14 @@ import { blogsData } from "@/utils/data/blogs-data";
 export default async function Home() {
   return (
     <div suppressHydrationWarning>
-      {/* 1. Sobre mí (Hero + About) */}
       <HeroSection />
       <AboutSection />
-
-      {/* 2. Experiencia */}
-      <Experience />
-
-      {/* 3. Formación */}
-      <Education />
-
-      {/* 4. Proyectos destacados */}
-      <Projects />
-
-      {/* 5. Presentaciones técnicas (De momento un espacio reservado) */}
-      {/* <Presentaciones /> */}
-
-      <Presentations />
-
-      {/* 6. Blog / artículos */}
-      <Blog blogs={blogsData} />
-
-      {/* 7. Skills / Idiomas / Contacto */}
       <Skills />
+      <Experience />
+      <Education />
+      <Projects />
+      <Presentations />
+      <Blog blogs={blogsData} />
       <ContactSection />
     </div>
   )
