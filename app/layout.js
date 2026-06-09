@@ -10,9 +10,9 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Abu Said - Software Developer",
+  title: "Daniel Zhan - Curriculum Web",
   description:
-    "This is the portfolio of Abu Said. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    "Soy Daniel Zhan, Ingeniero Informático graduado por la Universidad Politécnica de Madrid, especializado en desarrollo con Java y gestión de bases de datos MySQL. Interesado en el diseño y desarrollo de software escalable, con experiencia trabajando en entornos colaborativos y exigentes. Busco formar parte de un equipo donde contribuir al desarrollo de productos tecnológicos y continuar ampliando mis conocimientos en ingeniería de software.",
 };
 
 export default function RootLayout({ children }) {

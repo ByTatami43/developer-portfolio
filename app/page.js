@@ -7,33 +7,35 @@ import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
-
-async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  const data = await res.json();
-
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
-};
+import Presentations from "./components/homepage/presentations";
+import { blogsData } from "@/utils/data/blogs-data";
 
 export default async function Home() {
-  const blogs = await getData();
-
   return (
-    <div suppressHydrationWarning >
+    <div suppressHydrationWarning>
+      {/* 1. Sobre mí (Hero + About) */}
       <HeroSection />
       <AboutSection />
+
+      {/* 2. Experiencia */}
       <Experience />
-      <Skills />
-      <Projects />
+
+      {/* 3. Formación */}
       <Education />
-      <Blog blogs={blogs} />
+
+      {/* 4. Proyectos destacados */}
+      <Projects />
+
+      {/* 5. Presentaciones técnicas (De momento un espacio reservado) */}
+      {/* <Presentaciones /> */}
+
+      <Presentations />
+
+      {/* 6. Blog / artículos */}
+      <Blog blogs={blogsData} />
+
+      {/* 7. Skills / Idiomas / Contacto */}
+      <Skills />
       <ContactSection />
     </div>
   )
