@@ -1,9 +1,9 @@
 // @flow strict
 
-import { experiences } from "@/utils/data/experience";
+import { experienceData } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
-import experience from '../../../assets/lottie/code.json';
+import experienceAnim from '../../../assets/lottie/code.json';
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 
@@ -20,7 +20,7 @@ function Experience() {
       />
 
       <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
+        <div className="flex items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
             EXPERIENCIA
@@ -33,14 +33,15 @@ function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
             <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
+              {/* Aquí usamos el nombre correcto de la animación */}
+              <AnimationLottie animationPath={experienceAnim} />
             </div>
           </div>
 
           <div>
             <div className="flex flex-col gap-6">
               {
-                experiences.map(experience => (
+                experienceData.map(experience => (
                   <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
                     <div className="p-3 relative">
                       <Image
@@ -56,7 +57,7 @@ function Experience() {
                         </p>
                       </div>
                       <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                        <div className="text-violet-500 transition-all duration-300 hover:scale-125">
                           <BsPersonWorkspace size={36} />
                         </div>
                         <div>
@@ -66,6 +67,11 @@ function Experience() {
                           <p className="text-sm sm:text-base">
                             {experience.company}
                           </p>
+                          {experience.description && (
+                            <p className="text-sm text-gray-400 mt-3 leading-relaxed">
+                              {experience.description}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
