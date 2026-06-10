@@ -1,7 +1,7 @@
 export const educations = [
   {
     id: 1,
-    title: "Ingeniero Informático",
+    title: "Ingeniería Informático",
     duration: "2022 - 2026",
     institution: "Universidad Politécnica de Madrid",
   },
